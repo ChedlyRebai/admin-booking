@@ -39,8 +39,16 @@ const Datatable = ({columns}) => {
       width: 200,
       renderCell: (params) => (
         <div className="cellAction">
+
+      {/* Utilisez le lien dynamique avec l'ID de l'élément */}
+        <Link to={`/${path}/${params.row._id}`}>
+            <div className="editButton">Edit</div>
+          </Link>
+          {/* <Link to="/rooms" >
             <div className="viewButton">Edit</div>
-      
+            </Link> */}
+
+            
           <div className="deleteButton" onClick={() => handleDelete(params.row._id)}>
             Delete
           </div>
@@ -48,7 +56,6 @@ const Datatable = ({columns}) => {
       ),
     },
   ];
-
   return (
     <div className="datatable">
       <div className="datatableTitle">

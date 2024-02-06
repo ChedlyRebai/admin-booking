@@ -31,7 +31,7 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "HOTELS",
         isMoney: false,
         link: "View all orders",
         icon: (
@@ -47,7 +47,7 @@ const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
+        title: "ROOMS",
         isMoney: true,
         link: "View net earnings",
         icon: (
@@ -60,7 +60,7 @@ const Widget = ({ type }) => {
       break;
     case "balance":
       data = {
-        title: "BALANCE",
+        title: "RESERVATION",
         isMoney: true,
         link: "See details",
         icon: (

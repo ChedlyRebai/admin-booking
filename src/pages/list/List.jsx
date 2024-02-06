@@ -9,6 +9,7 @@ const List = ({columns}) => {
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
+        
         <Datatable columns={columns}/>
       </div>
     </div>

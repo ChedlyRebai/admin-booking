@@ -51,19 +51,18 @@ const Sidebar = () => {
             <span>Rooms</span>
           </li>
           </Link>
-         
-         
-          
-          
-          <p className="title">USER</p>
+          <Link to="/reservation" style={{ textDecoration: "none" }}>
           <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
+            <CreditCardIcon className="icon" />
+            <span>Reservation</span>
           </li>
+          </Link>
+    <Link to="/login">
           <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
+          </Link>
         </ul>
       </div>
       <div className="bottom">

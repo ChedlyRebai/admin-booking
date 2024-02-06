@@ -1,3 +1,55 @@
-.login{
-    
+/* login.scss */
+
+$primary-color: #007bff;
+$disabled-color: #ccc;
+$error-color: #ff0000;
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Change the background color as needed */
+}
+
+.lContainer {
+  background-color: #ffffff; /* Change the container background color */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.lInput {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.lButton {
+  width: 100%;
+  padding: 10px;
+  background-color: $primary-color; /* Use the primary color variable */
+  color: #ffffff; /* Change the text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: darken($primary-color, 10%); /* Darken the button color on hover */
+  }
+
+  &:disabled {
+    background-color: $disabled-color; /* Use the disabled color variable */
+    cursor: not-allowed;
+  }
+}
+
+span {
+  color: $error-color; /* Use the error color variable */
+  margin-top: 10px;
+  display: block;
 }

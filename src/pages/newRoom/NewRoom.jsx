@@ -72,6 +72,7 @@ const NewRoom = () => {
                       ))}
                 </select>
               </div>
+              
               <button onClick={handleClick}>Send</button>
             </form>
           </div>
