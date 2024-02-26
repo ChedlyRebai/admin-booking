@@ -35,7 +35,7 @@ const NewRoom = () => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>Add New Room</h1>
+          <h1>edit Room</h1>
         </div>
         <div className="bottom">
           <div className="right">

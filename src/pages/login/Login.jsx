@@ -7,7 +7,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
-    username: undefined,
+    email: undefined,
     password: undefined,
   });
 
@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", credentials);
+      const res = await axios.post("http://localhost:8800/api/auth/login", credentials);
       if(res.data.isAdmin){
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
         navigate("/")
@@ -32,7 +32,6 @@ const Login = () => {
       }
     } catch (err) {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
-
     }
   };
 
@@ -41,9 +40,9 @@ const Login = () => {
     <div className="login">    
       <div className="lContainer">
         <input
-          type="text"
-          placeholder="username"
-          id="username"
+          type="email"
+          placeholder="email"
+          id="email"
           onChange={handleChange}
           className="lInput"
         />
