@@ -8,12 +8,12 @@ import { hotelInputs } from "../../formSource";
 import { Select } from "@mui/material";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
-
+import { redirect } from "react-router-dom";
+import { Router,Route } from 'react-router';
 const NewHotel = () => {
   const [files, setFiles] = useState("");
   const [info, setInfo] = useState({});
   const [rooms, setRooms] = useState([]);
-
 
   const {data , loading , error} =useFetch("/rooms");
   const cld = new Cloudinary({
@@ -34,27 +34,25 @@ const NewHotel = () => {
   };
 
   console.log(files)
- const handleClick = async (e) =>{
+  const handleClick = async (e) =>{
+
   e.preventDefault();
   try{
     /*****selectionner une list des image************************** */
       const list = await Promise.all(
         Object.values (files).map(
-      async (file)=>{
+        async (file)=>{
+
           const data = new FormData();
           data.append("file", file);
           data.append("upload_preset", "upload");
           const uploadRes = await axios.post(
             "https://api.cloudinary.com/v1_1/dvduqtbfd/upload",
-            
             data
           )
-          
           console.log(uploadRes.data.url)
-    
           const { url } = uploadRes.data;
           return url
-      
         }
       ));
 
@@ -65,7 +63,9 @@ const NewHotel = () => {
         list,
       };
 
-      await axios.post("/hotels" , newhotel )
+      await axios.post("/hotels" , newhotel ).then(()=>{
+           window.location.replace("/hotels")
+      });
   }catch(err){
 
   }
@@ -77,7 +77,7 @@ const NewHotel = () => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>edit Hotel</h1>
+          <h1>New Hotel</h1>
         </div>
         <div className="bottom">
           <div className="left">

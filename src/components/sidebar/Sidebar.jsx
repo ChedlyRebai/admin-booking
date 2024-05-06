@@ -51,7 +51,7 @@ const Sidebar = () => {
             <span>Rooms</span>
           </li>
           </Link>
-          <Link to="/reservation" style={{ textDecoration: "none" }}>
+          <Link to="/allReservation" style={{ textDecoration: "none" }}>
           <li>
             <CreditCardIcon className="icon" />
             <span>Reservation</span>
